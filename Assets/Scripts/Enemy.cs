@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
+    [Header("General")]
     [SerializeField] float health = 100;
     [SerializeField] float shotCounter;
     [SerializeField] float minTimebetweenShots = 0.5f;
@@ -13,6 +14,14 @@ public class Enemy : MonoBehaviour {
     [SerializeField] float bulletSpeed = 8f;
     [SerializeField] GameObject playerLazer;
     [SerializeField] GameObject destroyEffect;
+    [SerializeField] float destroyDuation = 1f;
+
+    // Sound effects
+    [Header("Sound")]
+    [SerializeField] AudioClip enemyDie;
+    [SerializeField][Range(0,1)] float enemyDieVolumn = .7f;
+    [SerializeField] AudioClip enemyShoot;
+    [SerializeField] float enemyShootVolumn = 0.5f;
 
     // Use this for initialization
     void Start () 
@@ -47,7 +56,7 @@ public class Enemy : MonoBehaviour {
 
         // The shooting of the enemy should be downward, so should be negative
         laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -bulletSpeed);
-
+        AudioSource.PlayClipAtPoint(enemyShoot, Camera.main.transform.position, enemyShootVolumn);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -83,6 +92,8 @@ public class Enemy : MonoBehaviour {
          gameObject.transform.position,
             Quaternion.identity) as GameObject;
 
-        Destroy(destroyAnimation, 1.0f);
+        Destroy(destroyAnimation, destroyDuation);
+
+        AudioSource.PlayClipAtPoint(enemyDie, Camera.main.transform.position, enemyDieVolumn);
     }
 }

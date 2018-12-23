@@ -12,6 +12,10 @@ public class Player : MonoBehaviour
     [SerializeField] float paddingX = 0.05f;
     [SerializeField] float paddingY = 0.03f;
     [SerializeField] int health = 500;
+    [SerializeField] AudioClip playerDie;
+    [SerializeField] float playerDieVolumn = 0.7f;
+    [SerializeField] AudioClip playerShoot;
+    [SerializeField] float playerShootVolumn = 0.7f;
 
     [Header("Lazer")]
     [SerializeField] GameObject lazerPrefab;
@@ -70,8 +74,14 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(playerDie, Camera.main.transform.position, playerDieVolumn);
     }
 
     private void Move()
@@ -137,6 +147,7 @@ public class Player : MonoBehaviour
                 Quaternion.identity) as GameObject;
 
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, bulletSpeed);
+            AudioSource.PlayClipAtPoint(playerShoot, Camera.main.transform.position, playerShootVolumn);
             yield return new WaitForSeconds(bulletFiringPeriod);
         }
     }

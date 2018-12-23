@@ -153,6 +153,11 @@ MonoBehaviour:
     type: 2}
   destroyEffect: {fileID: 1780609757108532, guid: a9097e7f63ac24eb89bce39857ee9a86,
     type: 2}
+  destroyDuation: 1
+  enemyDie: {fileID: 8300000, guid: a0817f1134baa453b848354e8edd3fb0, type: 3}
+  enemyDieVolumn: 0.7
+  enemyShoot: {fileID: 8300000, guid: 3770656503a7645938747a172e82f246, type: 3}
+  enemyShootVolumn: 0.5
 --- !u!212 &212711527765311220
 SpriteRenderer:
   m_ObjectHideFlags: 1

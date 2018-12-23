@@ -175,6 +175,10 @@ MonoBehaviour:
   paddingX: 0.25
   paddingY: 0.3
   health: 500
+  playerDie: {fileID: 8300000, guid: 7c32b2e9d612a4d378b8230067c0df4b, type: 3}
+  playerDieVolumn: 0.7
+  playerShoot: {fileID: 8300000, guid: 0d50c5194f754440a9033dbdc11a3df2, type: 3}
+  playerShootVolumn: 0.2
   lazerPrefab: {fileID: 1068586389150014, guid: 4e83ebccb21ea5845aaebf778035964e,
     type: 2}
   bulletSpeed: 10
