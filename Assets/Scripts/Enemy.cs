@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour {
     [SerializeField] GameObject playerLazer;
     [SerializeField] GameObject destroyEffect;
     [SerializeField] float destroyDuation = 1f;
+    [SerializeField] public float enemyValue = 100;
 
     // Sound effects
     [Header("Sound")]
@@ -23,10 +24,14 @@ public class Enemy : MonoBehaviour {
     [SerializeField] AudioClip enemyShoot;
     [SerializeField] float enemyShootVolumn = 0.5f;
 
+    // Game game object
+    Game game;
+
     // Use this for initialization
     void Start () 
     {
         shotCounter = Random.Range(minTimebetweenShots, maxTimebetweenShots);
+        game = FindObjectOfType<Game>();
 	}
 	
 	// Update is called once per frame
@@ -84,6 +89,8 @@ public class Enemy : MonoBehaviour {
 
     private void Die()
     {
+        game.ScoreIncrement(this);
+
         Destroy(gameObject);
 
         // shows the destroy animation effect
