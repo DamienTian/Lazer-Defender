@@ -24,14 +24,11 @@ public class Enemy : MonoBehaviour {
     [SerializeField] AudioClip enemyShoot;
     [SerializeField] float enemyShootVolumn = 0.5f;
 
-    // Game game object
-    Game game;
-
     // Use this for initialization
     void Start () 
     {
         shotCounter = Random.Range(minTimebetweenShots, maxTimebetweenShots);
-        game = FindObjectOfType<Game>();
+
 	}
 	
 	// Update is called once per frame
@@ -89,7 +86,7 @@ public class Enemy : MonoBehaviour {
 
     private void Die()
     {
-        game.ScoreIncrement(this);
+        FindObjectOfType<Game>().ScoreIncrement(this);
 
         Destroy(gameObject);
 

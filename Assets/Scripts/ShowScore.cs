@@ -6,12 +6,12 @@ using TMPro;
 
 public class ShowScore : MonoBehaviour {
 
-    TextMeshPro scoreText;
+    TextMeshProUGUI scoreText;
     Game game;
 
 	// Use this for initialization
 	void Start () {
-        scoreText = GameObject.FindWithTag("Score").GetComponent<TextMeshPro>();
+        scoreText = GetComponent<TextMeshProUGUI>();
         game = FindObjectOfType<Game>();
 	}
 	

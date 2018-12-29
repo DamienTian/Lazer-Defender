@@ -6,13 +6,13 @@ using TMPro;
 public class Game : MonoBehaviour {
 
     float score = 0f;
-    [SerializeField] TextMeshPro scoreText;
 
-    void Start()
+    private void Awake()
     {
         int numberOfGameScore = FindObjectsOfType<Game>().Length;
         if (numberOfGameScore > 1)
         {
+            // Destroy itself if a new Game appears
             Destroy(gameObject);
         }
         else
@@ -34,6 +34,10 @@ public class Game : MonoBehaviour {
 
     public void ResetScore ()
     {
+        // In my version:
+        //      I put Level.cs and Game.cs in a same game object (GameManager)
+        //      So when I destroy the gameobject, it means the GameManager 
+        //      is destroied.
         Destroy(gameObject);
     }
 

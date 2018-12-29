@@ -15,7 +15,6 @@ public class Level : MonoBehaviour {
 
     IEnumerator DelayScene()
     {
-
         Debug.Log("Wait");
         yield return new WaitForSeconds(delaySeconds);
         SceneManager.LoadScene("Game Over");
@@ -23,7 +22,9 @@ public class Level : MonoBehaviour {
 
     public void LoadGameScene()
     {
+
         SceneManager.LoadScene("Game");
+        FindObjectOfType<Game>().ResetScore();
     }
 
     public void LoadStartMenu()
