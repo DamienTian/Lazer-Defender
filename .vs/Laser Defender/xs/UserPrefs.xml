@@ -1,17 +1,11 @@
 ﻿<Properties StartupConfiguration="{FD4A65F0-183F-9B01-6FDD-D96D34E458E6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LifeDisplay.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player.cs" Line="84" Column="16" />
-      <File FileName="Assets/Scripts/Enemy.cs" Line="92" Column="9" />
+      <File FileName="Assets/Scripts/Player.cs" Line="88" Column="29" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="92" Column="1" />
       <File FileName="Assets/Scripts/DamageDealer.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EnemyPathing.cs" Line="35" Column="1" />
-      <File FileName="Assets/Scripts/EnemySpawner.cs" Line="46" Column="45" />
-      <File FileName="Assets/Scripts/WaveConfig.cs" Line="27" Column="41" />
-      <File FileName="Assets/Scripts/Backgroundscroller.cs" Line="21" Column="38" />
-      <File FileName="Assets/Scripts/Level.cs" Line="17" Column="6" />
-      <File FileName="Assets/Scripts/DontDestroy.cs" Line="7" Column="40" />
-      <File FileName="Assets/Scripts/Game.cs" Line="40" Column="30" />
       <File FileName="Assets/Scripts/ShowScore.cs" Line="20" Column="23" />
+      <File FileName="Assets/Scripts/LifeDisplay.cs" Line="21" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

@@ -24,7 +24,11 @@ public class Level : MonoBehaviour {
     {
 
         SceneManager.LoadScene("Game");
-        FindObjectOfType<Game>().ResetScore();
+        if (FindObjectOfType<Game>())
+        {
+            FindObjectOfType<Game>().ResetScore();
+        }
+
     }
 
     public void LoadStartMenu()

@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed = 6f;
     [SerializeField] float paddingX = 0.05f;
     [SerializeField] float paddingY = 0.03f;
-    [SerializeField] int health = 500;
+    [SerializeField] public int health = 500;
     [SerializeField] AudioClip playerDie;
     [SerializeField] float playerDieVolumn = 0.7f;
     [SerializeField] AudioClip playerShoot;
@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     [SerializeField] float bulletFiringPeriod = 0.2f;
 
     Coroutine firingCoroutine;
+    LifeDisplay lifeDisplay;
 
     float xMin;
     float xMax;
@@ -34,6 +35,8 @@ public class Player : MonoBehaviour
     {
         // Setup the boundaries
         SetUpMoveBoundaries();
+
+        lifeDisplay = FindObjectOfType<LifeDisplay>();
     }
 
     private void SetUpMoveBoundaries()
@@ -71,6 +74,7 @@ public class Player : MonoBehaviour
       
         health -= damageDealer.GetDamage();
         damageDealer.Hit();
+        lifeDisplay.LoseLife();
 
         if (health <= 0)
         {
