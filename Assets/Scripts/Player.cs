@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     [SerializeField] float playerDieVolumn = 0.7f;
     [SerializeField] AudioClip playerShoot;
     [SerializeField] float playerShootVolumn = 0.7f;
+    [SerializeField] GameObject destroyEffect;
+    [SerializeField] float destroyDuation = 1f;
 
     [Header("Lazer")]
     [SerializeField] GameObject lazerPrefab;
@@ -23,7 +25,7 @@ public class Player : MonoBehaviour
     [SerializeField] float bulletFiringPeriod = 0.2f;
 
     Coroutine firingCoroutine;
-    LifeDisplay lifeDisplay;
+    //LifeDisplay lifeDisplay;
 
     float xMin;
     float xMax;
@@ -35,8 +37,6 @@ public class Player : MonoBehaviour
     {
         // Setup the boundaries
         SetUpMoveBoundaries();
-
-        lifeDisplay = FindObjectOfType<LifeDisplay>();
     }
 
     private void SetUpMoveBoundaries()
@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
       
         health -= damageDealer.GetDamage();
         damageDealer.Hit();
-        lifeDisplay.LoseLife();
+        FindObjectOfType<LifeDisplay>().LoseLife();
 
         if (health <= 0)
         {
@@ -87,6 +87,14 @@ public class Player : MonoBehaviour
         FindObjectOfType<Level>().LoadGameOver();
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(playerDie, Camera.main.transform.position, playerDieVolumn);
+
+        // shows the destroy animation effect
+        var destroyAnimation = Instantiate
+        (destroyEffect,
+         gameObject.transform.position,
+            Quaternion.identity) as GameObject;
+
+        Destroy(destroyAnimation, destroyDuation);
     }
 
     private void Move()

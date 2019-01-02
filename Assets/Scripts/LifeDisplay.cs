@@ -23,5 +23,9 @@ public class LifeDisplay : MonoBehaviour {
             lifeIndex++;
             currentLife = gameObject.transform.GetChild(lifeIndex).GetComponent<Image>();
         }
+        else if (player.health == 0)
+        {
+            currentLife.enabled = false;
+        }
     }
 }
