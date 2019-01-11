@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{FD4A65F0-183F-9B01-6FDD-D96D34E458E6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LifeDisplay.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player.cs" Line="88" Column="29" />
-      <File FileName="Assets/Scripts/Enemy.cs" Line="92" Column="1" />
+      <File FileName="Assets/Scripts/Player.cs" Line="77" Column="40" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="22" Column="41" />
       <File FileName="Assets/Scripts/DamageDealer.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ShowScore.cs" Line="20" Column="23" />
-      <File FileName="Assets/Scripts/LifeDisplay.cs" Line="21" Column="38" />
+      <File FileName="Assets/Scripts/LifeDisplay.cs" Line="28" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
